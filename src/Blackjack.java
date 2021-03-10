@@ -26,7 +26,7 @@ public class Blackjack {
         System.out.println("Facedown" + "\t\t" + d.playCard(1).toString());
 
         //Sum Hand -- add a method in player class
-
+        System.out.println("You are showing: " + p.sumHand());
         //Hit or Stand (P)
         //Hit or Stand (D)
         //Compare P and D

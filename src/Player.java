@@ -53,7 +53,7 @@ public class Player {
 
         String output = "";
         for(Card card: hand){
-            if(card.getSuit()=="Diamonds"){
+            if(card.getSuit().equals("Diamonds")){
                 output += (card.toString() + "\t");
             }else{
                 output += (card.toString() + "\t\t");
@@ -63,13 +63,33 @@ public class Player {
 
         return output;
     }
-    //BLACKJACK SPECIFIC
+
+
+    //Blackjack Specific
     public int sumHand(){
+        int sum = 0;
+        for(Card card: hand){
+            if(!card.getRank().equals("A")){
+                sum += card.getValue();
+            }
+        }
 
+        for(Card card: hand){
 
+            if(card.getRank().equals("A")){
+                if(sum+11 <= 21){
+                    sum+=11;
+                }else{
+                    sum+=1;
+                }
+            }
 
+        }
 
+        return sum;
     }
+
+
 
 
 }

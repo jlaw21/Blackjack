@@ -67,15 +67,16 @@ public class Player {
 
     //Blackjack Specific
     public int sumHand(){
-        int sum = 0;
-        for(Card card: hand){
-            if(!card.getRank().equals("A")){
-                sum += card.getValue();
-            }
-        }
+       int sum = 0;
 
-        for(Card card: hand){
+       for(Card card: hand){
+           if(!card.getRank().equals("A")){
+               sum += card.getValue();
+           }
+       }
 
+       //will not work quite right for two Aces
+       for(Card card: hand){
             if(card.getRank().equals("A")){
                 if(sum+11 <= 21){
                     sum+=11;
@@ -83,10 +84,9 @@ public class Player {
                     sum+=1;
                 }
             }
+       }
 
-        }
-
-        return sum;
+       return sum;
     }
 
 
